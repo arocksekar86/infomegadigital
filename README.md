@@ -1,6 +1,6 @@
 # Infomega Digital Technologies - Static Website
 
-A lightweight static website for **Infomega Digital Technologies**, a full-service digital marketing and ecommerce agency. Converted from a WordPress (Astra + Elementor) backup into clean HTML/CSS/JS.
+A pixel-perfect static website for **Infomega Digital Technologies**, a full-service digital marketing and ecommerce agency. Generated from a WordPress (Astra + Elementor) backup using Playwright browser automation to capture the fully rendered pages.
 
 ## Pages
 
@@ -19,33 +19,32 @@ static-site/
 ├── services.html       # Services page
 ├── about.html          # About page
 ├── contact.html        # Contact page
-├── css/
-│   └── style.css       # All styles (responsive, mobile-first)
-├── js/
-│   └── main.js         # Navigation, animations, testimonial slider, form handling
+├── css/                # All stylesheets (Astra theme, Elementor, plugins)
+├── js/                 # All scripts (jQuery, Elementor, Swiper, WPForms, etc.)
 ├── assets/
-│   ├── logo.svg        # White logo (for dark backgrounds / header)
-│   └── logo-black.svg  # Dark logo (for light backgrounds)
+│   ├── images/         # All images (logos, service graphics, client logos, testimonials)
+│   └── fonts/          # Icon fonts (Elementor icons, Font Awesome)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # GitHub Pages deployment
 └── README.md
 ```
 
 ## Features
 
-- **SEO Optimized**: Semantic HTML5, meta tags, Open Graph, canonical URLs, proper heading hierarchy
-- **Fully Responsive**: Mobile, tablet, and desktop layouts
-- **No Dependencies**: Pure HTML/CSS/JS - no frameworks or build tools required
-- **Performance**: Lightweight (~50KB total), no jQuery, minimal external resources
-- **Accessible**: ARIA labels, keyboard navigation, semantic elements
-- **Smooth Animations**: Intersection Observer scroll animations with graceful degradation
-- **Testimonials Slider**: Auto-playing carousel with touch swipe support
-- **Contact Form**: Client-side form with validation and success message
+- **Pixel-Perfect**: Captured from live WordPress using Playwright headless browser
+- **SEO Optimized**: Semantic HTML5, meta tags, proper heading hierarchy
+- **Fully Responsive**: Mobile, tablet, and desktop layouts via Astra & Elementor CSS
+- **Interactive**: Elementor carousels, testimonial sliders, WhatsApp chat widget
+- **All Assets Local**: Images, fonts, CSS, and JS served locally (no external dependencies except Google Fonts)
+- **Clean Structure**: Organized into `css/`, `js/`, and `assets/` folders
 
 ## Tech Stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom properties, Grid, Flexbox, media queries
-- **Vanilla JavaScript** - No libraries or frameworks
-- **Google Fonts** - Roboto, Roboto Slab
+- **HTML5** - Captured from WordPress Elementor rendering
+- **CSS3** - Astra theme + Elementor styles + plugin styles
+- **JavaScript** - jQuery, Elementor frontend, Swiper, WPForms, testimonial slider
+- **Google Fonts** - Loaded from Google CDN
 
 ## How to Run
 
@@ -62,15 +61,9 @@ npx serve .
 php -S localhost:8080
 ```
 
-## Color Palette
+## Deployment
 
-| Variable | Color | Usage |
-|----------|-------|-------|
-| `--primary` | `#01aef0` | Brand blue, buttons, links, accents |
-| `--secondary` | `#1a1a2e` | Dark backgrounds, header, footer |
-| `--accent` | `#61CE70` | Green highlights |
-| `--text` | `#555` | Body text |
-| `--heading` | `#1a1a2e` | Headings |
+Automatically deployed to GitHub Pages via GitHub Actions on push to `master`.
 
 ## Source Data
 
@@ -78,5 +71,6 @@ This static site was generated from a WordPress backup containing:
 - **Database**: MariaDB SQL dump (`u342552640_U3Z7B.sql`)
 - **Files**: WordPress installation in `public_html/` (Astra theme + Elementor page builder)
 - **Theme**: Astra 3.9.2 with Elementor 3.7.8
+- **Method**: Playwright headless browser crawl of locally hosted WordPress instance
 
 The original WordPress files are preserved in the `public_html/` directory alongside this static site.
