@@ -128,48 +128,44 @@ flexibility(document.documentElement);
     }
 }
 
-/* How can we help you? – equal-height cards, aligned More buttons, read more */
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-container {
-    display: flex;
-    align-items: stretch;
+/* How can we help you? – equal-height cards with aligned More buttons */
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section > .elementor-container {
+    display: flex !important;
+    align-items: stretch !important;
 }
 .elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column {
-    display: flex;
-    width: 100%;
+    display: flex !important;
 }
 .elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 auto;
     width: 100%;
-    min-height: 0;
+    padding: 20px !important;
 }
-/* Push More button to bottom so all buttons in a row align */
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap > .elementor-element:last-child {
-    margin-top: auto;
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap > .elementor-element {
+    margin-bottom: 0 !important;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap > .elementor-widget-image-box:nth-child(1) {
+    flex-shrink: 0;
+    margin-bottom: 10px !important;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
+    flex-shrink: 0;
+    margin-bottom: 10px !important;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-widget-button {
+    margin-top: auto !important;
     flex-shrink: 0;
 }
-/* Fixed height for title+description when collapsed – no blank white space */
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column:not(.service-card-expanded) .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
-    min-height: 8.5em;
-    flex-shrink: 0;
-}
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column .elementor-image-box-content .elementor-image-box-description {
-    max-height: 4.8em;
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-image-box-description {
+    max-height: 4.5em;
     overflow: hidden;
-    transition: max-height 0.35s ease;
+    transition: max-height 0.4s ease;
     line-height: 1.5;
 }
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column.service-card-expanded .elementor-image-box-content .elementor-image-box-description {
-    max-height: 2000px;
-}
-.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column.service-card-expanded .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
-    min-height: 0;
-}
-@media (max-width: 767px) {
-    .elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column:not(.service-card-expanded) .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
-        min-height: 7.5em;
-    }
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .service-card-expanded .elementor-image-box-description {
+    max-height: 600px;
 }		</style>
 					<style>
 				:root {
@@ -303,12 +299,12 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-30fbb68 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="30fbb68" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">SEO</h4><p class="elementor-image-box-description">Our Onetime SEO (Search Engine Services) involves ongoing services that will optimize your website to increase organic traffic. We analyze the entire website, your content &amp; business and find how to optimize according to the market to reach more visibility. We use ethical white-hat SEO techniques to get high-ranking results.<br><br><br><br><br><br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">SEO</h4><p class="elementor-image-box-description">Our Onetime SEO (Search Engine Services) involves ongoing services that will optimize your website to increase organic traffic. We analyze the entire website, your content &amp; business and find how to optimize according to the market to reach more visibility. We use ethical white-hat SEO techniques to get high-ranking results.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-6584b31 elementor-widget elementor-widget-button" data-id="6584b31" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="contact.html" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">More</span>
 		</span>
@@ -349,7 +345,7 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-b1e6a52 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="b1e6a52" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Paid Search Marketing</h4><p class="elementor-image-box-description">Paid search marketing is also called as pay per click (PPC) online advertising campaign, this auction-based online advertising service provided by search engine like google, bing, yahoo, etc... called search engine marketing (SEM) which allow the business to create a pay-per-click ad which will charge only when someone clicks the ad.<br><br><br><br><br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Paid Search Marketing</h4><p class="elementor-image-box-description">Paid search marketing is also called as pay per click (PPC) online advertising campaign, this auction-based online advertising service provided by search engine like google, bing, yahoo, etc... called search engine marketing (SEM) which allow the business to create a pay-per-click ad which will charge only when someone clicks the ad.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-8ad218b elementor-widget elementor-widget-button" data-id="8ad218b" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
@@ -376,12 +372,12 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-80f4d14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="80f4d14" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Social Media Marketing</h4><p class="elementor-image-box-description">Our team of professional graphic and web designers will help you with unique and creative logo and website designs that will match your buSocial Media Marketing (SMM) is one of the ways of digital marketing to promote/build a product, brand or service by developing a strategy, creating posts, monitoring, responding, engaging and more with a huge number of interactive audiences engaging in places like Facebook, Twitter, LinkedIn, Youtube, TikTok, Snapchat, etc...<br><br><br><br><br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Social Media Marketing</h4><p class="elementor-image-box-description">Our team of professional graphic and web designers will help you with unique and creative logo and website designs that will match your buSocial Media Marketing (SMM) is one of the ways of digital marketing to promote/build a product, brand or service by developing a strategy, creating posts, monitoring, responding, engaging and more with a huge number of interactive audiences engaging in places like Facebook, Twitter, LinkedIn, Youtube, TikTok, Snapchat, etc...</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-278467b elementor-widget elementor-widget-button" data-id="278467b" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="contact.html" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">More</span>
 		</span>
@@ -399,7 +395,7 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-d094e66 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="d094e66" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Analytics</h4><p class="elementor-image-box-description">Analytics is a very important part of digital marketing where we need to comprise data and technology to track the metrics and data-driven marketing activities. The best way in analytics is to bring the business metrics such as ROI and marketing attribution into the core of the marketing game in one place.<br><br><br><br><br><br><br><br><br><br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Analytics</h4><p class="elementor-image-box-description">Analytics is a very important part of digital marketing where we need to comprise data and technology to track the metrics and data-driven marketing activities. The best way in analytics is to bring the business metrics such as ROI and marketing attribution into the core of the marketing game in one place.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-fe828e0 elementor-widget elementor-widget-button" data-id="fe828e0" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
@@ -449,13 +445,12 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-911a553 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="911a553" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Paid Media</h4><p class="elementor-image-box-description">External marketing initiatives that entail a paid placement are referred to as "paid media." Examples include display adverts, branded content, and pay-per-click marketing. For internet firms, paid media is a crucial part of revenue growth and brand visibility. The information or marketing channel that requires money is considered to be paid media. Paid media in digital comes in many forms which include Product Listing Ads, Banner Ads, Demand-side platforms (DSP), Affiliate ads, Native ads, Social media ads, Video ads, Email ads and PPC. And through Paid media, we can focus on noteworthy consumer groups, such as groups like demographic or even former clients.
-</p><div><span style="font-style: inherit; font-weight: inherit;"></span><br></div><p></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Paid Media</h4><p class="elementor-image-box-description">External marketing initiatives that entail a paid placement are referred to as "paid media." Examples include display adverts, branded content, and pay-per-click marketing. For internet firms, paid media is a crucial part of revenue growth and brand visibility. The information or marketing channel that requires money is considered to be paid media. Paid media in digital comes in many forms which include Product Listing Ads, Banner Ads, Demand-side platforms (DSP), Affiliate ads, Native ads, Social media ads, Video ads, Email ads and PPC. And through Paid media, we can focus on noteworthy consumer groups, such as groups like demographic or even former clients.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-caacdc6 elementor-widget elementor-widget-button" data-id="caacdc6" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="contact.html" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">More</span>
 		</span>
@@ -496,7 +491,7 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-7e17073 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="7e17073" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Web Designing &amp; Development</h4><p class="elementor-image-box-description">In-depth keyword and competitor analysis is part of our initial planning for your website. With specific CTAs, we customise your website to promote results. All devices will have no trouble accessing your website, which will load exceptionally quickly.The first impression shows our uniqueness which something you will prove once. With the help of your website, you can show off your knowledge and establish your company as the go-to source for information in your field. When we create websites, we make sure they fit your business model, increase traffic, and provide the outcomes you need.<br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Web Designing &amp; Development</h4><p class="elementor-image-box-description">In-depth keyword and competitor analysis is part of our initial planning for your website. With specific CTAs, we customise your website to promote results. All devices will have no trouble accessing your website, which will load exceptionally quickly.The first impression shows our uniqueness which something you will prove once. With the help of your website, you can show off your knowledge and establish your company as the go-to source for information in your field. When we create websites, we make sure they fit your business model, increase traffic, and provide the outcomes you need.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-37a0efb elementor-widget elementor-widget-button" data-id="37a0efb" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
@@ -528,7 +523,7 @@ flexibility(document.documentElement);
 				<div class="elementor-element elementor-element-5d234e1 elementor-widget elementor-widget-button" data-id="5d234e1" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="contact.html" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">More</span>
 		</span>
@@ -546,7 +541,7 @@ flexibility(document.documentElement);
 				</div>
 				<div class="elementor-element elementor-element-a1a0210 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="a1a0210" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Brand Marketing</h4><p class="elementor-image-box-description">Our brand strategy work is driven by identifying a company's fundamental value proposition and mission statement. The clarity in purpose is necessary, just as there is a need for clarity in identification. The entire organization can be motivated and focused on by defining, ranking, and emphasizing a company's core characteristics. Establishing a clear and dazzling brand requires finding the ideal position, message, or architectural framework. Our brand positioning services can organize the many messaging elements in your business. We'll carefully examine, summarise, and rank your messaging after determining your stance to create a single, effective communication strategy.<br><br><br><br></p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h4 class="elementor-image-box-title">Brand Marketing</h4><p class="elementor-image-box-description">Our brand strategy work is driven by identifying a company's fundamental value proposition and mission statement. The clarity in purpose is necessary, just as there is a need for clarity in identification. The entire organization can be motivated and focused on by defining, ranking, and emphasizing a company's core characteristics. Establishing a clear and dazzling brand requires finding the ideal position, message, or architectural framework. Our brand positioning services can organize the many messaging elements in your business. We'll carefully examine, summarise, and rank your messaging after determining your stance to create a single, effective communication strategy.</p></div></div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-b911f06 elementor-widget elementor-widget-button" data-id="b911f06" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
