@@ -126,6 +126,50 @@ flexibility(document.documentElement);
         padding-left: 16px;
         padding-right: 16px;
     }
+}
+
+/* How can we help you? – equal-height cards, aligned More buttons, read more */
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-container {
+    display: flex;
+    align-items: stretch;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column {
+    display: flex;
+    width: 100%;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+}
+/* Push More button to bottom so all buttons in a row align */
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column > .elementor-widget-wrap > .elementor-element:last-child {
+    margin-top: auto;
+    flex-shrink: 0;
+}
+/* Fixed height for title+description when collapsed – no blank white space */
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column:not(.service-card-expanded) .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
+    min-height: 8.5em;
+    flex-shrink: 0;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column .elementor-image-box-content .elementor-image-box-description {
+    max-height: 4.8em;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    line-height: 1.5;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column.service-card-expanded .elementor-image-box-content .elementor-image-box-description {
+    max-height: 2000px;
+}
+.elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column.service-card-expanded .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
+    min-height: 0;
+}
+@media (max-width: 767px) {
+    .elementor-112 .elementor-element-96f9f39 .elementor-inner-section .elementor-inner-column:not(.service-card-expanded) .elementor-widget-wrap > .elementor-widget-image-box:nth-child(2) {
+        min-height: 7.5em;
+    }
 }		</style>
 					<style>
 				:root {
@@ -794,4 +838,32 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
 			</script>
 				
 
-<script src="./js/swiper.min.js?ver=5.3.6"></script></body></html>
+<script src="./js/swiper.min.js?ver=5.3.6"></script>
+<script>
+(function() {
+    function initServiceCards() {
+        var section = document.querySelector('.elementor-112 .elementor-element-96f9f39');
+        if (!section) return;
+        var cards = section.querySelectorAll('.elementor-inner-section .elementor-inner-column');
+        var buttons = section.querySelectorAll('.elementor-inner-section .elementor-widget-button .elementor-button-link');
+        buttons.forEach(function(btn) {
+            btn.removeEventListener('click', handleMoreClick);
+            btn.addEventListener('click', handleMoreClick);
+        });
+        function handleMoreClick(e) {
+            var link = e.currentTarget;
+            var card = link.closest('.elementor-inner-column');
+            if (!card) return;
+            e.preventDefault();
+            var expanded = card.classList.toggle('service-card-expanded');
+            var textSpan = link.querySelector('.elementor-button-text');
+            if (textSpan) textSpan.textContent = expanded ? 'Less' : 'More';
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initServiceCards);
+    } else {
+        initServiceCards();
+    }
+})();
+</script></body></html>
